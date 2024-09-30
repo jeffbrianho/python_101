@@ -10,20 +10,19 @@ def invalid_number(number_str):
         int(number_str)
     except ValueError:
         return True
-    
     return False
 
 prompt('Welcome to Calculator!')
 
 prompt('What is the first number?')
-number1 = (input())
+number1 = input()
 
 while invalid_number(number1):
     prompt("Hmm... that doesn't look like a valid number.")
     number1 = input()
 
 prompt('What is the second number?')
-number2 = (input())
+number2 = input()
 
 while invalid_number(number2):
     prompt("Hmm... that doesn't look like a valid number.")
@@ -44,8 +43,7 @@ match operation:
     case '2':
         output = int(number1) - int(number2)
     case '3':
-        output = int(number1) * int(number2)   
+        output = int(number1) * int(number2)
     case '4':
-        output = int(number1) / int(number2)         
-
+        output = int(number1) / int(number2)
 prompt(f'The result is: {output}')
