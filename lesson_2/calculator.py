@@ -1,13 +1,14 @@
 # Ask for a first number
 # Ask for a second number
 # Ask for the type of operation
-# Print out the value of the operation from number 1 and 2
+# Print out the value of the operation from number 1 and 2'
+
 def prompt(message):
     print(f"==> {message}")
 
 def invalid_number(number_str):
     try:
-        int(number_str)
+        float(number_str)
     except ValueError:
         return True
     return False
@@ -40,16 +41,16 @@ while True:
     match operation:
 
         case '1':
-            output = int(number1) + int(number2)
+            output = float(number1) + float(number2)
         case '2':
-            output = int(number1) - int(number2)
+            output = float(number1) - float(number2)
         case '3':
-            output = int(number1) * int(number2)
+            output = float(number1) * float(number2)
         case '4':
-            output = int(number1) / int(number2)
+            output = float(number1) / float(number2)
     prompt(f'The result is: {output}')
 
-    prompt(f'Would you like to perform another calculation?(Y/N)')
+    prompt('Would you like to perform another calculation?(y/n)')
     response = input()
-    if response and response.upper() != 'Y':
+    if response and response[0].lower() != 'y':
         break
