@@ -3,6 +3,14 @@
 # Ask for the type of operation
 # Print out the value of the operation from number 1 and 2'
 
+import json
+
+# Load the messages from the JSON file
+with open('calculator_messages.json', 'r') as file:
+    MESSAGES = json.load(file)
+
+# Now 'MESSAGES' contains the loaded messages as a Python dictionary
+
 def prompt(message):
     print(f"==> {message}")
 
@@ -14,7 +22,7 @@ def invalid_number(number_str):
     return False
 
 while True:
-    prompt('Welcome to Calculator!')
+    prompt(MESSAGES['welcome'])
 
     prompt('What is the first number?')
     number1 = input()
