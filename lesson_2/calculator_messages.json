@@ -1,4 +1,23 @@
 {
-    "welcome": "Welcome to Calculator!",
-    "invalid_number": "Hmm... that doesn't look like a valid number."
+    "en":{
+        "welcome": "Welcome to Calculator!",
+        "invalid_number": "Hmm... that doesn't look like a valid number.",
+        "number_1": "What is the first number?",
+        "number_2": "What is the second number?",
+        "operation": "What is the operation you would like to perform? 1) Add 2) Subtract 3) Multiply 4) Divide",
+        "op_choice": "You must choose 1, 2, 3, or 4",
+        "result": "The result is:",
+        "another": "Would you like to perform another calculation?(y/n)"
+    },
+
+    "rus":{
+        "welcome": "Добро пожаловать в Калькулятор!",
+        "invalid_number": "Хм... это не похоже на допустимое число.",
+        "number_1": "Какое первое число?",
+        "number_2": "Каково второе число?",
+        "operation": "Какую операцию вы хотели бы провести? 1) Сложение 2) Вычитание 3) Умножение 4) Деление",
+        "op_choice": "Вам необходимо выбрать 1, 2, 3 или 4.",
+        "result": "Результат:",
+        "another": "Хотите выполнить еще один расчет? (y/n)"
+    }
   }

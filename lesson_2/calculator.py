@@ -22,28 +22,30 @@ def invalid_number(number_str):
     return False
 
 while True:
-    prompt(MESSAGES['welcome'])
+    prompt('What is the language? Enter "en" for english or "rus" for Russian.')
+    lang = input()
 
-    prompt('What is the first number?')
+    prompt(MESSAGES[lang]['welcome'])
+
+    prompt(MESSAGES[lang]['number_1'])
     number1 = input()
 
     while invalid_number(number1):
-        prompt("Hmm... that doesn't look like a valid number.")
+        prompt(MESSAGES[lang]["invalid_number"])
         number1 = input()
 
-    prompt('What is the second number?')
+    prompt(MESSAGES[lang]['number_2'])
     number2 = input()
 
     while invalid_number(number2):
-        prompt("Hmm... that doesn't look like a valid number.")
+        prompt(MESSAGES[lang]["invalid_number"])
         number2 = input()
 
-    prompt('What is the operation you would like to perform?'
-        '\n 1) Add 2) Subtract 3) Multiply 4) Divide')
+    prompt(MESSAGES[lang]['operation'])
     operation = input()
 
     while operation not in ["1", "2", "3", "4"]:
-        prompt('You must choose 1, 2, 3, or 4')
+        prompt(MESSAGES[lang]['op_choice'])
         operation = input()
 
     match operation:
@@ -56,9 +58,9 @@ while True:
             output = float(number1) * float(number2)
         case '4':
             output = float(number1) / float(number2)
-    prompt(f'The result is: {output}')
+    prompt(f'{MESSAGES[lang]['result']} {output}')
 
-    prompt('Would you like to perform another calculation?(y/n)')
+    prompt(MESSAGES[lang]['another'])
     response = input()
     if response and response[0].lower() != 'y':
         break

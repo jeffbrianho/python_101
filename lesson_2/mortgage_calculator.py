@@ -40,12 +40,12 @@ while True:
     monthly_duration = float(duration) * 12
 
     if int(apr):
-        CALCULATED_INTEREST = (monthly_interest /(1 - (1 + monthly_interest)
+        calculated_interest = (monthly_interest /(1 - (1 + monthly_interest)
                             ** (-monthly_duration)))
     else:
-        CALCULATED_INTEREST = 1 / 12
+        calculated_interest = 1 / 12
 
-    monthly_payment = float(loan_amount) * CALCULATED_INTEREST
+    monthly_payment = float(loan_amount) * calculated_interest
 
     prompt(f' Your payment will be ${round(monthly_payment,2)} '
            'dollars a month!')
