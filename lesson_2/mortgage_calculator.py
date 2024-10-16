@@ -39,7 +39,7 @@ while True:
 
     monthly_duration = float(duration) * 12
 
-    if int(apr):
+    if float(apr):
         calculated_interest = (monthly_interest /(1 - (1 + monthly_interest)
                             ** (-monthly_duration)))
     else:

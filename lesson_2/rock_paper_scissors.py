@@ -31,6 +31,20 @@ def display_winner(player, computer):
     else:
         prompt("Computer Wins!")
 
+def abbreviation(letter):
+    if letter.lower() == 'r':
+        return 'rock'
+    elif letter.lower() == 'p':
+        return  'paper'
+    elif letter.lower() == 's':
+        return 'scissors'
+    elif letter.lower() == 'l':
+        return 'lizard'
+    elif letter.lower() == 'v':
+        return 'spock'
+    else:
+        return 'invalid' 
+
 while True:
 
     PLAYER_WIN_COUNTER = 0
@@ -39,12 +53,14 @@ while True:
     prompt(f"Welcome to {', '.join(VALID_CHOICES)}! Best of 5 Wins!")
 
     while (PLAYER_WIN_COUNTER < 3) and (COMPUTER_WIN_COUNTER < 3):
-        prompt(f"Choose one: {', '.join(VALID_CHOICES)}")
-        choice = input()
+        prompt(f"Choose one: {', '.join(VALID_CHOICES)} Can use inital letter i.e 'r' for rock 'v' for spock")
+        choice_input = input()
+        choice = abbreviation(choice_input)
 
         while choice not in VALID_CHOICES:
-            prompt('That is not a valid choice')
-            choice = input()
+            prompt('That is not a valid choice, type (r, p, s, l, v)')
+            choice_input = input()
+            choice = abbreviation(choice_input)
 
         computer_choice = random.choice(VALID_CHOICES)
 

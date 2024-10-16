@@ -8,7 +8,7 @@
 # PROBLEM:
 # input: length integer
 # input: width integer
-# output: integer in meters and float in square in feet 
+# output: integer in meters and float in square feet 
 
 #Domain: put in 2 inputs (x, y) as an integer
 # calculate the area 2 times; x * y and x * 10.7639 and y * 10.7639 for feet
@@ -22,9 +22,22 @@
 # ALGORITHM; use multiplication for both outputs and create a variable for each
 
 # CODE
+print('Enter the measurement type(m for meters, f, for feet)')
+measurement = input()
 
-length = int(input("enter length "))
-width = int(input('enter width '))
+if measurement == 'm':
 
-print((f'The area in meters is {(length * width):.2f} square meters,'
-       f'and the area in feet is {(length * width * 10.7639):.2f} square feet'))
+    length = int(input("enter length in meters "))
+    width = int(input('enter width in meters '))
+
+    print((f'The area in meters is {(length * width):.2f} square meters,'
+        f'and the area in feet is {(length * width * 10.7639):.2f} square feet'))
+elif measurement == 'f':
+
+    length = int(input("enter length in feet "))
+    width = int(input('enter width in feet '))
+
+    print((f'The area in feet is {(length * width):.2f} square feet,'
+        f'and the area in meters is {(length * width / 10.7639):.2f} square meters'))
+else:
+    print('Must enter "m" or "f"!')
