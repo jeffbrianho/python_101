@@ -1,5 +1,16 @@
-age = int(input("what is your current age? "))
+# What does this nested function code with nonlocal variables print?
+# <!---->
+# # python
 
-print(f'You are {age} years old')
-for year in range(10, 50, 10):
-    print(f'in {year} years you will be {age + year} years old')
+def counter():
+    count = 0 
+    def increment():
+        nonlocal count # 0
+        count += 1
+        return count # 1
+    return increment # count = 1
+
+my_counter = counter() # my_counter will remember count 
+print(my_counter()) # 1
+print(my_counter()) # 2
+print(my_counter()) # 3
